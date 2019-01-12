@@ -64,3 +64,8 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+section, .icons, .btns {
+  display: flex;
+  flex-direction: row;
+}
