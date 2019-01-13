@@ -12,7 +12,13 @@ const Header = () => {
           </a>
         </div>
 
+        <div className="content-type">
+          <i className="fa fa-line-chart" aria-hidden="true"></i>
+          <p>Popular</p>
+        </div>
+
         <div className="input">
+          <span className="fa fa-search"></span>
           <form action="">
             <input type="text" placeholder="Search Reddit"/>
           </form>
@@ -42,7 +48,7 @@ const Header = () => {
         <div className="user">
           <div className="user-place dropdown">
             <i className="fa fa-user-circle dropbtn" aria-hidden="true"></i>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>

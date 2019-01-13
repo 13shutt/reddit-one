@@ -18,7 +18,7 @@ const AppContainer = () => (
     {/* {console.log(fetchData(10))} */}
 
     <Switch>
-      <Route exact path="/" render={() => <div>start!!!</div>} />
+      <Route exact path="/" render={() => <div></div>} />
     </Switch>
   </div>
 );
