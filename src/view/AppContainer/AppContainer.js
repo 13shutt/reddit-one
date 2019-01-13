@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
 
-//import { fetchData } from '../../api/reddit-api'
+import { fetchPopularPostsArray, fetchAllPostsArray, fetchOriginalPostsArray } from '../../api/reddit-api'
 import Header from '../../containers/Header'
 
 const AppContainer = () => (
@@ -15,7 +15,9 @@ const AppContainer = () => (
 
     <Header />
 
-    {/* {console.log(fetchData(10))} */}
+    {console.log(fetchPopularPostsArray(10), 'popular')}
+    {console.log(fetchAllPostsArray(10), 'all')}
+    {console.log(fetchOriginalPostsArray(10), 'original')}
 
     <Switch>
       <Route exact path="/" render={() => <div></div>} />
