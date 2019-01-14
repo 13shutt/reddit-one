@@ -2,10 +2,10 @@ import React from 'react'
 import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
 
-import { fetchPopularPostsArray, fetchAllPostsArray, fetchOriginalPostsArray } from '../../api/reddit-api'
 import Header from '../../containers/Header'
 
-const AppContainer = () => (
+
+const AppContainer = (props) => (
   <div>
     <Helmet>
       <meta charSet="utf-8" />
@@ -15,10 +15,9 @@ const AppContainer = () => (
 
     <Header />
 
-    {console.log(fetchPopularPostsArray(10), 'popular')}
-    {console.log(fetchAllPostsArray(10), 'all')}
-    {console.log(fetchOriginalPostsArray(10), 'original')}
-
+    <button onClick={() => props.actions.fetchPostsData('popular', 10)}>ok</button>
+    <button onClick={() => console.log(props.posts)}>okda</button>
+              
     <Switch>
       <Route exact path="/" render={() => <div></div>} />
     </Switch>

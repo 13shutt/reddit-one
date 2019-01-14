@@ -1,0 +1,1 @@
+export const FETCH_POSTS_DATA = 'FETCH_POSTS_DATA'
