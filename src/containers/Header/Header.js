@@ -49,9 +49,9 @@ const Header = () => {
           <div className="user-place dropdown">
             <i className="fa fa-user-circle dropbtn" aria-hidden="true"></i>
             <div className="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="null">Link 1</a>
+              <a href="null">Link 2</a>
+              <a href="null">Link 3</a>
             </div>
           </div>
         </div>
