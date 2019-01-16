@@ -1,15 +1,16 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 import Header from '../../containers/Header'
 
-
 const AppContainer = (props) => {
 
-  const [count, setCount] = useState(0);
-  
+  useEffect(() => {
+    props.actions.fetchPostsData('popular', 10)
+  }, []);
+
   return (
     <div>
       <Helmet>
@@ -19,12 +20,7 @@ const AppContainer = (props) => {
       </Helmet>
 
       <Header />
-
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-
+      {/*  data types must changed in redux, not manually like btns! */}
       <button onClick={() => props.actions.fetchPostsData('popular', 10)}>ok</button>
       <button onClick={() => console.log(props.posts)}>okda</button>
                 
