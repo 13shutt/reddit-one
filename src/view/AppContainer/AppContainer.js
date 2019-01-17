@@ -7,9 +7,7 @@ import Header from '../../containers/Header'
 
 const AppContainer = (props) => {
 
-  useEffect(() => {
-    props.actions.fetchPostsData('popular', 10)
-  }, []);
+  useEffect(() => props.actions.fetchPosts('popular', 10), []);
 
   return (
     <div>
@@ -20,8 +18,9 @@ const AppContainer = (props) => {
       </Helmet>
 
       <Header />
-      {/*  data types must changed in redux, not manually like btns! */}
-      <button onClick={() => props.actions.fetchPostsData('popular', 10)}>ok</button>
+      
+      <button onClick={() => props.actions.fetchPosts('popular', 10)}>popular</button>
+      <button onClick={() => props.actions.fetchPosts('all', 10)}>all</button>
       <button onClick={() => console.log(props.posts)}>okda</button>
                 
       <Switch>

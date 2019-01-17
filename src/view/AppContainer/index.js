@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { fetchPostsData } from '../../store/Posts/actions'
+import { fetchPosts } from '../../store/Posts/actions'
 
 import AppContainer from './AppContainer'
 
@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    fetchPostsData
+    fetchPosts
   }, dispatch)
 })
 
