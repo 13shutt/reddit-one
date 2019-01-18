@@ -7,7 +7,10 @@ import Header from '../../containers/Header'
 
 const AppContainer = (props) => {
 
-  useEffect(() => props.actions.fetchPosts('popular', 10), []);
+  //{props.posts !== [] ? useEffect(() => props.actions.fetchPosts('popular', 10)) : null}
+  {console.log(props.posts)}
+
+  useEffect(() => props.actions.fetchPosts('popular', 10))
 
   return (
     <div>
