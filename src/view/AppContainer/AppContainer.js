@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
-import { useEffect } from 'react';
 
 import Header from '../../containers/Header'
 
-const AppContainer = (props) => {
+class AppContainer extends Component {
+  
+  constructor(props) {
+    super(props)
+  }
 
-  //{props.posts !== [] ? useEffect(() => props.actions.fetchPosts('popular', 10)) : null}
-  {console.log(props.posts)}
+  componentDidMount() {
+    this.props.actions.fetchPosts('popular', 10)
+  }
 
-  useEffect(() => props.actions.fetchPosts('popular', 10))
-
-  return (
-    <div>
+  render() { 
+    return (
+      <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Reddit</title>
@@ -22,15 +25,16 @@ const AppContainer = (props) => {
 
       <Header />
       
-      <button onClick={() => props.actions.fetchPosts('popular', 10)}>popular</button>
-      <button onClick={() => props.actions.fetchPosts('all', 10)}>all</button>
-      <button onClick={() => console.log(props.posts)}>okda</button>
+      <button onClick={() => this.props.actions.fetchPosts('popular', 10)}>popular</button>
+      <button onClick={() => this.props.actions.fetchPosts('all', 10)}>all</button>
+      <button onClick={() => console.log(this.props.posts)}>okda</button>
                 
       <Switch>
         <Route exact path="/" render={() => <div></div>} />
       </Switch>
     </div>
-  );
+    );
+  }
 }
-
+ 
 export default AppContainer;
