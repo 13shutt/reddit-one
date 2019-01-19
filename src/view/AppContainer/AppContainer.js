@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 import Header from '../../containers/Header'
+import PostsList from '../PostsList'
+
+import './AppContainer.css'
 
 class AppContainer extends Component {
-  
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
     this.props.actions.fetchPosts('popular', 10)
@@ -23,11 +23,15 @@ class AppContainer extends Component {
         <link rel="icon" href={require('../../assets/images/reddit-icon.png')} type="image/png" sizes="16x16" />
       </Helmet>
 
-      <Header />
+      <Header fetchPosts={this.props.actions.fetchPosts}/>
       
-      <button onClick={() => this.props.actions.fetchPosts('popular', 10)}>popular</button>
-      <button onClick={() => this.props.actions.fetchPosts('all', 10)}>all</button>
-      <button onClick={() => console.log(this.props.posts)}>okda</button>
+      <section className={`posts-loading-${this.props.loading}`}>
+        {this.props.loading === true 
+        ? <Loader type="Oval" color="orange" height={120} width={120} /> 
+        : <PostsList />}
+      </section>
+
+      
                 
       <Switch>
         <Route exact path="/" render={() => <div></div>} />

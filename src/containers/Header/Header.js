@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <section>
@@ -25,13 +25,13 @@ const Header = () => {
         </div>
 
         <div className="icons">
-          <div className="popular">
+          <div className="popular" onClick={() => props.fetchPosts('popular', 25)}>
             <i className="fa fa-line-chart" aria-hidden="true"></i>
           </div>
-          <div className="all">
+          <div className="all" onClick={() => props.fetchPosts('all', 25)}>
             <i className="fa fa-bar-chart" aria-hidden="true"></i>
           </div>
-          <div className="original-content">
+          <div className="original-content"  onClick={() => props.fetchPosts('original', 25)}>
             <i className="fa fa-pie-chart" aria-hidden="true"></i>
           </div>
         </div>

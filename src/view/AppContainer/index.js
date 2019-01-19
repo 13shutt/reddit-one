@@ -6,7 +6,9 @@ import { fetchPosts } from '../../store/Posts/actions'
 import AppContainer from './AppContainer'
 
 const mapStateToProps = state => ({
-  posts: state.postsReducer.posts
+  posts: state.postsReducer.posts,
+  loading: state.postsReducer.loading,
+  error: state.postsReducer.error
 })
 
 const mapDispatchToProps = dispatch => ({
