@@ -5,7 +5,7 @@ import './Header.css'
 const Header = (props) => {
   return (
     <header>
-      <section>
+      <section className="header-section">
         <div className="logo">
           <a href="http://localhost:3000/">
             <img src={require('../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>

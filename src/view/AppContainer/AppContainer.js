@@ -11,7 +11,7 @@ import './AppContainer.css'
 class AppContainer extends Component {
 
   componentDidMount() {
-    this.props.actions.fetchPosts('popular', 10)
+    this.props.actions.fetchPosts('popular', 5)
   }
 
   render() { 

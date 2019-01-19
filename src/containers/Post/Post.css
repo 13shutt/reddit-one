@@ -1,0 +1,26 @@
+.post-container {
+  width: 600px;
+  padding: 10px 0px;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.post {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-header * {
+  margin: 0px 8px;
+}
