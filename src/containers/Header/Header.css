@@ -89,12 +89,17 @@
 .icons {
   justify-content: space-between;
   width: 120px;
-  font-size: 20px;
-  margin: 0px 25px;
+  font-size: 16px;
+  margin: 0px 22px;
 }
 
 .icons div {
   cursor: pointer;
+}
+
+.icons div i {
+  padding: 8px;
+  border-radius: 3px;
 }
 
 .btns {
@@ -127,4 +132,12 @@
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.icons div i:hover  {
+  background-color: #dddcdc;
+}
+
+.icon-select {
+  background-color: #dddcdc;
 }

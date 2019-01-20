@@ -3,12 +3,14 @@
   padding: 10px 0px;
   border: 1px solid rgba(0,0,0,0.2);
   margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .post {
   display: flex;
   flex-direction: row;
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
 
 .post-content {
@@ -19,8 +21,62 @@
 .post-header {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 15px;
 }
 
-.post-header * {
-  margin: 0px 8px;
+.post-header > * {
+  margin-right: 6px;
+}
+
+.ups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 10px;
+  min-width: 45px;
+}
+
+.post-subreddit {
+  font-size: 14px;
+}
+
+.post-subreddit:hover, .post-author:hover {
+  text-decoration: underline;
+}
+
+.post-info {
+  font-size: 11px;
+  color: grey;
+}
+
+.post-title {
+  font-size: 20px;
+}
+
+.post-footer {
+  margin-top: 15px;
+}
+
+.post-commetns {
+  display: flex;
+  flex-direction: row;
+  color: #8a8888;
+  align-items: baseline;
+  width: min-content;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.post-commetns p {
+  margin: 0px 4px;
+}
+
+.post-commetns i {
+  font-size: 18px;
+}
+
+.post-commetns:hover {
+  background-color: #e2e0e0;
 }

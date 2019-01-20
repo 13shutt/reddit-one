@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './Header.css'
 
 const Header = (props) => {
+  
+  const [classname, setClassname] = useState('fa-line-chart')
+  const [postType, setPostType] = useState('Popular')
+
+  const iconFunction = (type, icon, amount) => {
+    props.fetchPosts(type, amount); 
+    setClassname(icon); 
+    setPostType(type)
+  }
+  
   return (
     <header>
       <section className="header-section">
@@ -13,25 +23,25 @@ const Header = (props) => {
         </div>
 
         <div className="content-type">
-          <i className="fa fa-line-chart" aria-hidden="true"></i>
-          <p>Popular</p>
+          <i className={`fa ${classname}`} aria-hidden="true"></i>
+          <p>{postType}</p>
         </div>
 
         <div className="input">
           <span className="fa fa-search"></span>
-          <form action="">
+          <form>
             <input type="text" placeholder="Search Reddit"/>
           </form>
         </div>
 
         <div className="icons">
-          <div className="popular" onClick={() => props.fetchPosts('popular', 25)}>
+          <div className="popular" onClick={() => iconFunction('Popular', 'fa-line-chart', 25)}>
             <i className="fa fa-line-chart" aria-hidden="true"></i>
           </div>
-          <div className="all" onClick={() => props.fetchPosts('all', 25)}>
+          <div className="all" onClick={() => iconFunction('All', 'fa-bar-chart', 25)}>
             <i className="fa fa-bar-chart" aria-hidden="true"></i>
           </div>
-          <div className="original-content"  onClick={() => props.fetchPosts('original', 25)}>
+          <div className="original-content"  onClick={() => iconFunction('Original', 'fa-pie-chart', 25)}>
             <i className="fa fa-pie-chart" aria-hidden="true"></i>
           </div>
         </div>
