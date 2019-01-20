@@ -57,9 +57,16 @@
 
 .post-footer {
   margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
-.post-commetns {
+.post-footer div {
+  margin-right: 5px;
+}
+
+.post-commetns, .post-share {
   display: flex;
   flex-direction: row;
   color: #8a8888;
@@ -73,10 +80,32 @@
   margin: 0px 4px;
 }
 
-.post-commetns i {
+.post-commetns i, .post-share i {
   font-size: 18px;
 }
 
-.post-commetns:hover {
+.post-commetns:hover, .post-share:hover {
   background-color: #e2e0e0;
+}
+
+.ups i {
+  font-size: 22px;
+  color: #6e6e6e;
+  padding: 3px 6px;
+}
+
+.ups p {
+  font-size: 18px;
+}
+
+.fa-caret-up:hover {
+  color: red;
+}
+
+.fa-caret-down:hover {
+  color: blue;
+}
+
+.post-share i {
+  margin-right: 4px;
 }

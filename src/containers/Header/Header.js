@@ -35,13 +35,13 @@ const Header = (props) => {
         </div>
 
         <div className="icons">
-          <div className="popular" onClick={() => iconFunction('Popular', 'fa-line-chart', 25)}>
+          <div className="popular" onClick={() => iconFunction('Popular', 'fa-line-chart', 30)}>
             <i className="fa fa-line-chart" aria-hidden="true"></i>
           </div>
-          <div className="all" onClick={() => iconFunction('All', 'fa-bar-chart', 25)}>
+          <div className="all" onClick={() => iconFunction('All', 'fa-bar-chart', 30)}>
             <i className="fa fa-bar-chart" aria-hidden="true"></i>
           </div>
-          <div className="original-content"  onClick={() => iconFunction('Original', 'fa-pie-chart', 25)}>
+          <div className="original-content"  onClick={() => iconFunction('Original', 'fa-pie-chart', 30)}>
             <i className="fa fa-pie-chart" aria-hidden="true"></i>
           </div>
         </div>
