@@ -74,6 +74,7 @@
   width: min-content;
   padding: 2px 4px;
   border-radius: 5px;
+  font-size: 14px;
 }
 
 .post-commetns p {
@@ -81,7 +82,7 @@
 }
 
 .post-commetns i, .post-share i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .post-commetns:hover, .post-share:hover {
