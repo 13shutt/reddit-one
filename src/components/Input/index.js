@@ -25,7 +25,7 @@ const StyledDiv = styled.div`
 `
 
 
-const InputContainer = ({ placeholder }) => (
+const Input = ({ placeholder }) => (
   <StyledDiv>
     <span className="fa fa-search"></span>
     <form>
@@ -34,6 +34,4 @@ const InputContainer = ({ placeholder }) => (
   </StyledDiv>
 )
 
-const StyledInput = styled(InputContainer)
-
-export default StyledInput
+export default Input

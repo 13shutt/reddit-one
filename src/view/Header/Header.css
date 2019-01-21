@@ -64,14 +64,7 @@
   margin: 0px 22px;
 }
 
-.icons div {
-  cursor: pointer;
-}
 
-.icons div i {
-  padding: 8px;
-  border-radius: 3px;
-}
 
 .btns {
   justify-content: space-between;
@@ -82,12 +75,6 @@
   font-size: 20px;
   color: blue;
   margin-right: 6px;
-}
-
-
-
-.icons div i:hover  {
-  background-color: #dddcdc;
 }
 
 .icon-select {
@@ -144,6 +131,18 @@
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.icons div {
+  cursor: pointer;
+}
+
+.icons div i {
+  padding: 8px;
+  border-radius: 3px;
+}
+.icons div i:hover  {
+  background-color: #dddcdc;
 }
 
 */

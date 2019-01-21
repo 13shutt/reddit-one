@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import Button from '../../components/Button'
-import StyledInput from '../../components/Input'
+import Input from '../../components/Input'
+import Icon from '../../components/Icon'
 
 import './Header.css'
 
@@ -30,18 +31,12 @@ const Header = (props) => {
           <p>{postType}</p>
         </div>
 
-        <StyledInput placeholder="Search Reddit"/>
+        <Input placeholder="Search Reddit"/>
 
         <div className="icons">
-          <div className="popular" onClick={() => iconFunction('Popular', 'fa-line-chart', 30)}>
-            <i className="fa fa-line-chart" aria-hidden="true"></i>
-          </div>
-          <div className="all" onClick={() => iconFunction('All', 'fa-bar-chart', 30)}>
-            <i className="fa fa-bar-chart" aria-hidden="true"></i>
-          </div>
-          <div className="original-content"  onClick={() => iconFunction('Original', 'fa-pie-chart', 30)}>
-            <i className="fa fa-pie-chart" aria-hidden="true"></i>
-          </div>
+          <Icon classname="fa-line-chart"  onClick={() => iconFunction('Popular', 'fa-line-chart', 30)}/>
+          <Icon classname="fa-bar-chart"  onClick={() => iconFunction('All', 'fa-bar-chart', 30)}/>
+          <Icon classname="fa-pie-chart"  onClick={() => iconFunction('Original', 'fa-pie-chart', 30)}/>
         </div>
 
         <div className="btns">
@@ -50,13 +45,8 @@ const Header = (props) => {
         </div>
 
         <div className="user">
-          <div className="user-place dropdown">
-            <i className="fa fa-user-circle dropbtn" aria-hidden="true"></i>
-            <div className="dropdown-content">
-              <a href="null">Link 1</a>
-              <a href="null">Link 2</a>
-              <a href="null">Link 3</a>
-            </div>
+          <div className="user-place">
+            <i className="fa fa-user-circle" aria-hidden="true"></i>
           </div>
         </div>
       </section>
