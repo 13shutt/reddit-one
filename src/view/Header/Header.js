@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import Button from '../../components/Button'
+import StyledInput from '../../components/Input'
+
 import './Header.css'
 
 const Header = (props) => {
@@ -21,6 +24,58 @@ const Header = (props) => {
             <img src={require('../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>
           </a>
         </div>
+
+        <div className="content-type">
+          <i className={`fa ${classname}`} aria-hidden="true"></i>
+          <p>{postType}</p>
+        </div>
+
+        <StyledInput placeholder="Search Reddit"/>
+
+        <div className="icons">
+          <div className="popular" onClick={() => iconFunction('Popular', 'fa-line-chart', 30)}>
+            <i className="fa fa-line-chart" aria-hidden="true"></i>
+          </div>
+          <div className="all" onClick={() => iconFunction('All', 'fa-bar-chart', 30)}>
+            <i className="fa fa-bar-chart" aria-hidden="true"></i>
+          </div>
+          <div className="original-content"  onClick={() => iconFunction('Original', 'fa-pie-chart', 30)}>
+            <i className="fa fa-pie-chart" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div className="btns">
+          <Button primary>LOG IN</Button>
+          <Button>SING UP</Button>
+        </div>
+
+        <div className="user">
+          <div className="user-place dropdown">
+            <i className="fa fa-user-circle dropbtn" aria-hidden="true"></i>
+            <div className="dropdown-content">
+              <a href="null">Link 1</a>
+              <a href="null">Link 2</a>
+              <a href="null">Link 3</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+  );
+}
+ 
+export default Header; 
+
+{/* <header>
+      <section className="header-section">
+        <div className="logo">
+          <a href="http://localhost:3000/">
+            <img src={require('../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>
+          </a>
+        </div>
+
+        <Button primary>primary</Button>
+        <Button>not primary</Button>
 
         <div className="content-type">
           <i className={`fa ${classname}`} aria-hidden="true"></i>
@@ -66,8 +121,4 @@ const Header = (props) => {
           </div>
         </div>
       </section>
-    </header>
-  );
-}
- 
-export default Header; 
+    </header> */}

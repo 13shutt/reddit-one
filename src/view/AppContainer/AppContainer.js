@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Route, Switch } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
-import Header from '../../containers/Header'
+import Header from '../Header'
 import PostsList from '../PostsList'
 
 import './AppContainer.css'

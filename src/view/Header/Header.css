@@ -6,35 +6,6 @@
   width: 140px;
 }
 
-.button {
-  width: 130px;
-  height: 35px;
-  backface-visibility: hidden;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  white-space: nowrap;
-  border-radius: 5px;
-  border-width: 2px 2px 2px 2px;
-  font-size: initial;
-  font-family: Helvetica Neue;
-  font-weight: 500;
-  font-style: normal;
-  word-spacing: 4px;
-}
-
-.log-in {
-  background: #504b4c;
-  color: #fff;
-  border: 2px solid #353031;
-}
-
-.sign-up {
-  color: #504b4c;
-  background: #fff;
-  border: 2px solid #353031;
-}
-
 .dropbtn {
   padding: 16px;
   font-size: 16px;
@@ -69,7 +40,7 @@
   display: block;
 }
 
-.header-section, .icons, .btns, .content-type, .input {
+.header-section, .icons, .btns, .content-type {
   display: flex;
   flex-direction: row;
   justify-content: baseline;
@@ -113,6 +84,47 @@
   margin-right: 6px;
 }
 
+
+
+.icons div i:hover  {
+  background-color: #dddcdc;
+}
+
+.icon-select {
+  background-color: #dddcdc;
+}
+
+
+
+/* .button {
+  width: 130px;
+  height: 35px;
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 5px;
+  border-width: 2px 2px 2px 2px;
+  font-size: initial;
+  font-family: Helvetica Neue;
+  font-weight: 500;
+  font-style: normal;
+  word-spacing: 4px;
+}
+
+.log-in {
+  background: #504b4c;
+  color: #fff;
+  border: 2px solid #353031;
+}
+
+.sign-up {
+  color: #504b4c;
+  background: #fff;
+  border: 2px solid #353031;
+} 
+
 .input {
   position: relative;
   color: #aaa;
@@ -134,10 +146,4 @@
   left: 10px;
 }
 
-.icons div i:hover  {
-  background-color: #dddcdc;
-}
-
-.icon-select {
-  background-color: #dddcdc;
-}
+*/

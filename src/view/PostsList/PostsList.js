@@ -2,7 +2,7 @@ import React from 'react';
 
 import './PostsList.css'
 
-import Post from '../../containers/Post'
+import Post from '../../components/Post'
 
 const PostsList = (props) => {
   return (

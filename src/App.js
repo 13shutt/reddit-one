@@ -3,9 +3,7 @@ import { Provider } from 'react-redux'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
 
-import './App.css'
-
-// import { initStyles } from './styles'
+import { initStyles } from './styles'
 import configureStore from './store/configureStore'
 
 import AppContainer from './view/AppContainer'
@@ -13,7 +11,7 @@ import AppContainer from './view/AppContainer'
 const history = createBrowserHistory()
 const store = configureStore(history)
 
-// initStyles()
+initStyles()
 
 const App = () => {
   return (
