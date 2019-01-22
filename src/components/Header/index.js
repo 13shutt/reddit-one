@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
-import Button from '../../components/Button'
-import Input from '../../components/Input'
-import Icon from '../../components/Icon'
+import Button from '../Button'
+import { Input, Icon, User, Logo, ContentIcon, HeaderWrapper } from './styles'
 
 import './Header.css'
 
@@ -19,24 +18,18 @@ const Header = (props) => {
   
   return (
     <header>
-      <section className="header-section">
-        <div className="logo">
-          <a href="http://localhost:3000/">
-            <img src={require('../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>
-          </a>
-        </div>
+      <HeaderWrapper>
 
-        <div className="content-type">
-          <i className={`fa ${classname}`} aria-hidden="true"></i>
-          <p>{postType}</p>
-        </div>
+        <Logo link="http://localhost:3000/"/>
+
+        <ContentIcon classname={classname} postType={postType}/>
 
         <Input placeholder="Search Reddit"/>
 
         <div className="icons">
-          <Icon classname="fa-line-chart"  onClick={() => iconFunction('Popular', 'fa-line-chart', 30)}/>
-          <Icon classname="fa-bar-chart"  onClick={() => iconFunction('All', 'fa-bar-chart', 30)}/>
-          <Icon classname="fa-pie-chart"  onClick={() => iconFunction('Original', 'fa-pie-chart', 30)}/>
+          <Icon classname="fa-line-chart"  click={() => iconFunction('Popular', 'fa-line-chart', 30)}/>
+          <Icon classname="fa-bar-chart"  click={() => iconFunction('All', 'fa-bar-chart', 30)}/>
+          <Icon classname="fa-pie-chart"  click={() => iconFunction('Original', 'fa-pie-chart', 30)}/>
         </div>
 
         <div className="btns">
@@ -44,12 +37,9 @@ const Header = (props) => {
           <Button>SING UP</Button>
         </div>
 
-        <div className="user">
-          <div className="user-place">
-            <i className="fa fa-user-circle" aria-hidden="true"></i>
-          </div>
-        </div>
-      </section>
+        <User />
+
+      </HeaderWrapper>
     </header>
   );
 }

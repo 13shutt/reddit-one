@@ -26,11 +26,11 @@ const Post = (props) => (
             <span>Comments</span>
           </div>
           <div className="post-share">
-            <i class="fa fa-share" aria-hidden="true"></i>
+            <i className="fa fa-share" aria-hidden="true"></i>
             <span>Share</span>
           </div>
           <div className="post-share">
-            <i class="fa fa-bookmark" aria-hidden="true"></i>
+            <i className="fa fa-bookmark" aria-hidden="true"></i>
             <span>Save</span>
           </div>
         </div>

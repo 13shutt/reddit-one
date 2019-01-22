@@ -6,14 +6,14 @@ const StyledDiv = styled.div`
   i {
     padding: 8px;
     border-radius: 3px;
-    ::hover {
+    :hover {
       background-color: #dddcdc;
     }
   } 
 `
 
-const Icon = ({classname}) => (
-  <StyledDiv>
+const Icon = ({classname, click}) => (
+  <StyledDiv onClick={click}>
     <i className={`fa ${classname}`} aria-hidden="true"></i>   
   </StyledDiv>
 )
