@@ -1,12 +1,18 @@
 import React from 'react';
-
-import './PostsList.css'
+import styled from 'styled-components'
 
 import Post from '../../components/Post'
 
+const StyledSection = styled.section`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const PostsList = (props) => {
   return (
-    <section className="posts-section">
+    <StyledSection>
       {props.posts.map(item => (
         <Post 
           key={item.data.id}
@@ -20,7 +26,7 @@ const PostsList = (props) => {
           num_comments={item.data.num_comments}
         />
       ))}
-    </section>
+    </StyledSection>
   );
 }
  
