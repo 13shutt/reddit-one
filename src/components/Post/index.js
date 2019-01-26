@@ -3,16 +3,15 @@ import numeral from 'numeral'
 
 import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper } from './styles'
 
-
-const Post = (props) => (
+const Post = ({data: {ups, subreddit_name_prefixed, author, title, num_comments}}) => (
   <Wrapper container>
     <Wrapper posts>
-      <Ups>{numeral(props.ups).format('0a')}</Ups>
+      <Ups>{numeral(ups).format('0a')}</Ups>
       <Wrapper content>
-        <PostHeader subreddit={props.subreddit} author={props.author} />
-        <PostTitle title={props.title} />
+        <PostHeader subreddit={subreddit_name_prefixed} author={author} />
+        <PostTitle title={title} />
         <Wrapper footer>
-          <PostFooterIcon faClass={"fa-comments"} children={numeral(props.num_comments).format('0a')} text={"Comments"}/>
+          <PostFooterIcon faClass={"fa-comments"} children={numeral(num_comments).format('0a')} text={"Comments"}/>
           <PostFooterIcon faClass={"fa-share"} text={"Share"}/>
           <PostFooterIcon faClass={"fa-bookmark"} text={"Save"}/>
         </Wrapper>

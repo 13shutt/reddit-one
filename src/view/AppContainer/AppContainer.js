@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet'
 import { Route, Switch } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
@@ -34,8 +34,8 @@ class AppContainer extends Component {
           <Route exact path="/" render={() => <div></div>} />
         </Switch>
       </section>
-    );
+    )
   }
 }
  
-export default AppContainer;
+export default AppContainer
