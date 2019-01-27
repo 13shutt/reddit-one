@@ -24,12 +24,10 @@ const StyledDiv = styled.div`
   }
 `
 
-const Ups = ({ children }) => (
+export const Ups = ({ children }) => (
   <StyledDiv>
     <i className="fa fa-caret-up" aria-hidden="true"></i>
       <p>{children}</p>
     <i className="fa fa-caret-down" aria-hidden="true"></i>
   </StyledDiv>
 )
-
-export default Ups

@@ -24,11 +24,9 @@ const StyledDiv = styled.div`
   }
 `
 
-const PostHeader = ({ subreddit, author }) => (
+export const PostHeader = ({ subreddit, author }) => (
   <StyledDiv>
     <h5>{subreddit}</h5>
     <p>- Posted by <span>{author}</span></p>
   </StyledDiv>
 )
-
-export default PostHeader

@@ -12,10 +12,8 @@ const StyledDiv = styled.div`
   } 
 `
 
-const Icon = ({classname, click}) => (
+export const Icon = ({classname, click}) => (
   <StyledDiv onClick={click}>
     <i className={`fa ${classname}`} aria-hidden="true"></i>   
   </StyledDiv>
 )
-
-export default Icon

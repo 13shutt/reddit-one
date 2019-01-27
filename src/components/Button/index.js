@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Button = styled.button`
+export const Button = styled.button`
   background: ${props => props.primary ? "#504b4c" : "#fff"};
   color: ${props => props.primary ? "#fff" : "#504b4c"};
 
@@ -20,5 +20,3 @@ const Button = styled.button`
   word-spacing: 4px;
   border: 2px solid #353031;
 `
-
-export default Button;

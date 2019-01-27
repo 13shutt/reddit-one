@@ -7,7 +7,7 @@ import Header from '../../components/Header'
 import PostsMain from '../../components/PostsMain'
 import PostsList from '../PostsList'
 
-class AppContainer extends Component {
+export default class AppContainer extends Component {
 
   componentDidMount() {
     this.props.actions.fetchPosts('popular', 30)
@@ -37,5 +37,3 @@ class AppContainer extends Component {
     )
   }
 }
- 
-export default AppContainer

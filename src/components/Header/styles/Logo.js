@@ -8,12 +8,10 @@ const StyledDiv = styled.div`
   }
 `
 
-const Logo = ({ link }) => (
+export const Logo = ({ link }) => (
   <StyledDiv>
     <a href={link}>
       <img src={require('../../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>
     </a>
   </StyledDiv>
 )
-
-export default Logo

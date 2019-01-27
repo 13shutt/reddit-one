@@ -23,12 +23,10 @@ const StyledDiv = styled.div`
   }
 `
 
-const PostFooterIcon = ({ faClass, children, text }) => (
+export const PostFooterIcon = ({ faClass, children, text }) => (
   <StyledDiv>
     <i className={`fa ${faClass}`} aria-hidden="true"></i>
     <p>{children}</p>
     <span>{text}</span>
   </StyledDiv>
 )
-
-export default PostFooterIcon

@@ -14,11 +14,9 @@ const StyledDiv = styled.div`
   }
 `
 
-const ContentIcon = ({ classname, postType }) => (
+export const ContentIcon = ({ classname, postType }) => (
   <StyledDiv>
     <i className={`fa ${classname}`} aria-hidden="true"></i>
     <p>{postType}</p>
   </StyledDiv>
 )
-
-export default ContentIcon

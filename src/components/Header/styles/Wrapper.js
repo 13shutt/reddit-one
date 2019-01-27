@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,5 +18,3 @@ const Wrapper = styled.div`
   //btns
   width: ${props => props.btns ? "300px" : null};
 `
-
-export default Wrapper

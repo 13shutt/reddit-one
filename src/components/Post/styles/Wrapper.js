@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 
   ${({ container }) => 
     container && css`
@@ -36,7 +36,5 @@ const Wrapper = styled.div`
       align-items: baseline;
     `
   }
-
+  
 `
-
-export default Wrapper
