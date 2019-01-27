@@ -24,11 +24,13 @@ export default class AppContainer extends Component {
 
         <Header fetchPosts={this.props.actions.fetchPosts}/>
         
-        <PostsMain loading={this.props.loading}>
+        {/* <PostsMain loading={this.props.loading}>
           {this.props.loading === true 
           ? <Loader type="Oval" color="orange" height={120} width={120} /> 
           : <PostsList />}
-        </PostsMain>
+        </PostsMain> */}
+
+        <PostsMain loading={this.props.loading} />
 
         <Switch>
           <Route exact path="/" render={() => <div></div>} />
