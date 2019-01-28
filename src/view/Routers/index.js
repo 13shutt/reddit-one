@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 
 import { fetchPosts } from '../../store/Posts/actions'
 
-import AppContainer from './Routers'
+import Routers from './Routers'
 
 const mapStateToProps = state => ({
   posts: state.postsReducer.posts,
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(Routers)

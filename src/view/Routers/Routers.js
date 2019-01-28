@@ -8,7 +8,7 @@ import Posts from '../Posts'
 export default class AppContainer extends Component {
 
   componentDidMount() {
-    this.props.actions.fetchPosts('popular', 30)
+    this.props.actions.fetchPosts('popular', 10)
   }
 
   render() { 
@@ -22,7 +22,7 @@ export default class AppContainer extends Component {
 
         <Header fetchPosts={this.props.actions.fetchPosts}/>
 
-        <Posts loading={this.props.loading} />
+        <Posts />
 
         <Switch>
           <Route exact path="/" render={() => <div></div>} />

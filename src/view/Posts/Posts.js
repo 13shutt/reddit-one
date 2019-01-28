@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components'
 import Loader from 'react-loader-spinner'
 
@@ -19,21 +19,18 @@ const StyledDiv = styled.section`
   min-height: 89vh;
 `
 
-const Posts = (props) => {
-  return (
-    <StyledDiv>
-      {props.loading === true 
+class Posts extends Component {
+  render() { 
+    return (
+      <StyledDiv>
+      {this.props.loading === true 
         ? <Loader type="Oval" color="orange" height={120} width={120} /> 
-        :<StyledSection>
-          {props.posts.map(item => (
-            <Post 
-              key={item.data.id}
-              data={item.data}
-            />
-          ))}
+        : <StyledSection>
+          {this.props.posts.map(item => ( <Post key={item.data.id} data={item.data} /> ))}
         </StyledSection>}
-    </StyledDiv>
-  );
+      </StyledDiv>
+    )
+  }
 }
- 
-export default Posts;
+
+export default Posts
