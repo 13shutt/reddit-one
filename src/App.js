@@ -6,7 +6,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import { initStyles } from './styles'
 import configureStore from './store/configureStore'
 
-import AppContainer from './view/AppContainer'
+import Routers from './view/Routers'
 
 const history = createBrowserHistory()
 const store = configureStore(history)
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <AppContainer />
+        <Routers />
       </ConnectedRouter>
     </Provider>
   );

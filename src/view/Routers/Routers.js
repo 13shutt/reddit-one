@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 import { Route, Switch } from 'react-router-dom'
-import Loader from 'react-loader-spinner'
 
 import Header from '../../components/Header'
-import PostsMain from '../../components/PostsMain'
-import PostsList from '../PostsList'
+import Posts from '../Posts'
 
 export default class AppContainer extends Component {
 
@@ -18,19 +16,13 @@ export default class AppContainer extends Component {
       <section>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Reddit</title>
+          <title>reddit-client</title>
           <link rel="icon" href={require('../../assets/images/reddit-icon.png')} type="image/png" sizes="16x16" />
         </Helmet>
 
         <Header fetchPosts={this.props.actions.fetchPosts}/>
-        
-        {/* <PostsMain loading={this.props.loading}>
-          {this.props.loading === true 
-          ? <Loader type="Oval" color="orange" height={120} width={120} /> 
-          : <PostsList />}
-        </PostsMain> */}
 
-        <PostsMain loading={this.props.loading} />
+        <Posts loading={this.props.loading} />
 
         <Switch>
           <Route exact path="/" render={() => <div></div>} />
