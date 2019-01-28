@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Button } from '../Button/index'
 import { Input, Icon, User, Logo, ContentIcon, Wrapper } from './styles'
+
 
 const Header = (props) => {
   
@@ -9,8 +11,8 @@ const Header = (props) => {
   const [postType, setPostType] = useState('Popular')
 
   const iconFunction = (type, icon, amount) => {
-    props.fetchPosts(type, amount); 
-    setClassname(icon); 
+    props.fetchPosts(type, amount)
+    setClassname(icon)
     setPostType(type)
   }
   
@@ -18,16 +20,18 @@ const Header = (props) => {
     <header>
       <Wrapper header>
 
-        <Logo link="http://localhost:3000/"/>
+        <Link to="/">
+          <Logo link="http://localhost:3000/" click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
+        </Link>
 
         <ContentIcon classname={classname} postType={postType}/>
 
         <Input placeholder="Search Reddit"/>
 
         <Wrapper icons>
-          <Icon classname="fa-line-chart"  click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
-          <Icon classname="fa-bar-chart"  click={() => iconFunction('All', 'fa-bar-chart', 10)}/>
-          <Icon classname="fa-pie-chart"  click={() => iconFunction('Original', 'fa-pie-chart', 10)}/>
+            <Icon classname="fa-line-chart" to="popular"  click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
+            <Icon classname="fa-bar-chart" to="all"  click={() => iconFunction('All', 'fa-bar-chart', 10)}/>
+            <Icon classname="fa-pie-chart" to="original"  click={() => iconFunction('Original', 'fa-pie-chart', 10)}/>
         </Wrapper>
 
         <Wrapper btns>

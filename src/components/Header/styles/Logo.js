@@ -8,9 +8,9 @@ const StyledDiv = styled.div`
   }
 `
 
-export const Logo = ({ link }) => (
+export const Logo = ({ link, click }) => (
   <StyledDiv>
-    <a href={link}>
+    <a href={link} onClick={click}>
       <img src={require('../../../assets/images/reddit-logo-full.png')} alt="reddit-logo"/>
     </a>
   </StyledDiv>

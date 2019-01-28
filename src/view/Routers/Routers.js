@@ -22,10 +22,11 @@ export default class AppContainer extends Component {
 
         <Header fetchPosts={this.props.actions.fetchPosts}/>
 
-        <Posts />
-
         <Switch>
-          <Route exact path="/" render={() => <div></div>} />
+          <Route exact path="/" component={Posts} />
+          <Route path="/r/popular" component={Posts} />
+          <Route path="/r/all" component={Posts} />
+          <Route path="/r/original" component={Posts} />
         </Switch>
       </section>
     )

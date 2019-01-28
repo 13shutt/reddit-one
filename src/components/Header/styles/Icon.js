@@ -1,8 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
   cursor: pointer;
+  a {
+    color: #000;
+    text-decoration: none;
+    :hover, :active {
+      text-decoration: none;
+    }
+  }
   i {
     padding: 8px;
     border-radius: 3px;
@@ -12,8 +20,10 @@ const StyledDiv = styled.div`
   } 
 `
 
-export const Icon = ({classname, click}) => (
+export const Icon = ({classname, click, to}) => (
   <StyledDiv onClick={click}>
-    <i className={`fa ${classname}`} aria-hidden="true"></i>   
+    <Link to={`/r/${to}`}>
+      <i className={`fa ${classname}`} aria-hidden="true"></i>   
+    </Link>
   </StyledDiv>
 )
