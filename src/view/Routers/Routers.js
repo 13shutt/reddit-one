@@ -24,9 +24,7 @@ export default class AppContainer extends Component {
 
         <Switch>
           <Route exact path="/" component={Posts} />
-          <Route path="/r/popular" component={Posts} />
-          <Route path="/r/all" component={Posts} />
-          <Route path="/r/original" component={Posts} />
+          <Route path="/r/:type" component={Posts} />
         </Switch>
       </section>
     )
