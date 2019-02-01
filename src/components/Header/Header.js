@@ -29,9 +29,9 @@ const Header = (props) => {
         <Input placeholder="Search Reddit"/>
 
         <Wrapper icons>
-            <Icon classname="fa-line-chart" to="popular"  click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
-            <Icon classname="fa-bar-chart" to="all"  click={() => iconFunction('All', 'fa-bar-chart', 10)}/>
-            <Icon classname="fa-pie-chart" to="original"  click={() => iconFunction('Original', 'fa-pie-chart', 10)}/>
+            <Icon classname="fa-line-chart" type="popular"  click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
+            <Icon classname="fa-bar-chart" type="all"  click={() => iconFunction('All', 'fa-bar-chart', 10)}/>
+            <Icon classname="fa-pie-chart" type="original"  click={() => iconFunction('Original', 'fa-pie-chart', 10)}/>
         </Wrapper>
 
         <Wrapper btns>

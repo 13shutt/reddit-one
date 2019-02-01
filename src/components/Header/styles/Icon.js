@@ -20,9 +20,9 @@ const StyledDiv = styled.div`
   } 
 `
 
-export const Icon = ({classname, click, to}) => (
+export const Icon = ({classname, click, type}) => (
   <StyledDiv onClick={click}>
-    <Link to={`/r/${to}`}>
+    <Link to={`/r/${type}`}>
       <i className={`fa ${classname}`} aria-hidden="true"></i>   
     </Link>
   </StyledDiv>

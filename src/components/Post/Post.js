@@ -1,15 +1,18 @@
 import React from 'react'
 import numeral from 'numeral'
 
-import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper } from './styles'
+import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Video } from './styles'
 
-const Post = ({data: {ups, subreddit_name_prefixed, author, title, num_comments}}) => (
+const Post = ({data: {ups, subreddit_name_prefixed, author, secure_media, is_video, title, num_comments}}) => (
   <Wrapper container>
     <Wrapper posts>
       <Ups>{numeral(ups).format('0a')}</Ups>
       <Wrapper content>
         <PostHeader subreddit={subreddit_name_prefixed} author={author} />
         <PostTitle title={title} />
+
+        {is_video ? (<Video secure_media={secure_media} />) : null}
+
         <Wrapper footer>
           <PostFooterIcon faClass={"fa-comments"} children={numeral(num_comments).format('0a')} text={"Comments"}/>
           <PostFooterIcon faClass={"fa-share"} text={"Share"}/>
