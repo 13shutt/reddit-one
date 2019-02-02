@@ -20,7 +20,10 @@ export default class AppContainer extends Component {
           <link rel="icon" href={require('../../assets/images/reddit-icon.png')} type="image/png" sizes="16x16" />
         </Helmet>
 
-        <Header fetchPosts={this.props.actions.fetchPosts}/>
+        <Header 
+          fetchPosts={this.props.actions.fetchPosts} 
+          fetchOriginalPosts={this.props.actions.fetchOriginalPosts} 
+        />
 
         <Switch>
           <Route exact path="/" component={Posts} />

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { fetchPosts } from '../../store/Posts/actions'
+import { fetchPosts, fetchOriginalPosts } from '../../store/Posts/actions'
 
 import Routers from './Routers'
 
@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    fetchPosts
+    fetchPosts,
+    fetchOriginalPosts
   }, dispatch)
 })
 

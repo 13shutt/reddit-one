@@ -1,9 +1,21 @@
 import { FETCH_POSTS_BEGIN, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE } from './constants';
-import { fetchPostsURL } from '../../api/reddit-api'
+import { fetchPostsURL, fetchOriginalPostsURL } from '../../api/reddit-api'
 
 const fetchPosts = (type, limit) => dispatch => {
   dispatch(fetchPostsBegin());
   return fetch(fetchPostsURL(type, limit))
+  .then(handleErrors)
+  .then(res => res.json())
+  .then(json => {
+    dispatch(fetchPostsSuccess(json.data));
+    return json;
+  })
+  .catch(error => dispatch(fetchPostsFailure(error)));
+}
+
+const fetchOriginalPosts = (limit) => dispatch => {
+  dispatch(fetchPostsBegin());
+  return fetch(fetchOriginalPostsURL(limit))
   .then(handleErrors)
   .then(res => res.json())
   .then(json => {
@@ -33,4 +45,4 @@ const fetchPostsFailure = error => ({
   type: FETCH_POSTS_FAILURE
 })
 
-export { fetchPosts }
+export { fetchPosts, fetchOriginalPosts }

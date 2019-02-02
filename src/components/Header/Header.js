@@ -11,7 +11,11 @@ const Header = (props) => {
   const [postType, setPostType] = useState('Popular')
 
   const iconFunction = (type, icon, amount) => {
-    props.fetchPosts(type, amount)
+    if (type === "Original") {
+      props.fetchOriginalPosts(amount)
+    } else {
+      props.fetchPosts(type, amount)
+    }
     setClassname(icon)
     setPostType(type)
   }

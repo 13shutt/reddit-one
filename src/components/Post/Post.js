@@ -8,8 +8,7 @@ const Post = ({data: {
     subreddit_name_prefixed, 
     author, 
     url, 
-    post_hint, 
-    selftext_html, 
+    post_hint,
     preview, 
     title, 
     num_comments
@@ -24,9 +23,7 @@ const Post = ({data: {
         {console.log(post_hint)}
 
         {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
-        
         <UrlLink post_hint={post_hint} url={url} />
-
         <Image post_hint={post_hint} url={url} />
         
         <Wrapper footer>
