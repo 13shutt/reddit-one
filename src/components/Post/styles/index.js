@@ -5,5 +5,6 @@ import { PostFooterIcon } from './PostFooterIcon'
 import { Wrapper } from './Wrapper'
 import { Image } from './Image'
 import { UrlLink } from './UrlLink'
+import { Video } from "./Video";
 
-export { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink }
+export { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video }

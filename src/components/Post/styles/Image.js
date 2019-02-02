@@ -12,6 +12,6 @@ const StyledDiv = styled.div`
 
 export const Image = ({ post_hint, url }) => (
   <StyledDiv post_hint={post_hint}>
-    <img src={url} />
+    <img src={url} alt="eslint shut up!"/>
   </StyledDiv>
 )

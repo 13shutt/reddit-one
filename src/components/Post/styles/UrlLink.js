@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 440px;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Courier New', Courier, monospace;
 `
 

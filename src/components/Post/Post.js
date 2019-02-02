@@ -1,9 +1,19 @@
 import React from 'react'
 import numeral from 'numeral'
 
-import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink } from './styles'
+import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video } from './styles'
 
-const Post = ({data: {ups, subreddit_name_prefixed, author, url, post_hint, title, num_comments}}) => (
+const Post = ({data: {
+    ups, 
+    subreddit_name_prefixed, 
+    author, 
+    url, 
+    post_hint, 
+    selftext_html, 
+    preview, 
+    title, 
+    num_comments
+  }}) => (
   <Wrapper container>
     <Wrapper posts>
       <Ups>{numeral(ups).format('0a')}</Ups>
@@ -13,6 +23,8 @@ const Post = ({data: {ups, subreddit_name_prefixed, author, url, post_hint, titl
 
         {console.log(post_hint)}
 
+        {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
+        
         <UrlLink post_hint={post_hint} url={url} />
 
         <Image post_hint={post_hint} url={url} />
