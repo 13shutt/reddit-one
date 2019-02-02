@@ -1,7 +1,7 @@
 import React from 'react'
 import numeral from 'numeral'
 
-import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image } from './styles'
+import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink } from './styles'
 
 const Post = ({data: {ups, subreddit_name_prefixed, author, url, post_hint, title, num_comments}}) => (
   <Wrapper container>
@@ -10,6 +10,10 @@ const Post = ({data: {ups, subreddit_name_prefixed, author, url, post_hint, titl
       <Wrapper content>
         <PostHeader subreddit={subreddit_name_prefixed} author={author} />
         <PostTitle title={title} />
+
+        {console.log(post_hint)}
+
+        <UrlLink post_hint={post_hint} url={url} />
 
         <Image post_hint={post_hint} url={url} />
         
