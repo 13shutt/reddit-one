@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
       margin: 10px;
       border-radius: 5px;
       cursor: pointer;
+      transition: border 0.07s ease-out;
+      :hover {
+        border: 1px solid rgba(0,0,0,0.4);
+      }
     `
   }
 

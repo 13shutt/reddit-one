@@ -6,5 +6,6 @@ import { Wrapper } from './Wrapper'
 import { Image } from './Image'
 import { UrlLink } from './UrlLink'
 import { Video } from "./Video";
+import { HostedVideo } from './HostedVideo'
 
-export { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video }
+export { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video, HostedVideo }

@@ -1,7 +1,7 @@
 import React from 'react'
 import numeral from 'numeral'
 
-import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video } from './styles'
+import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video, HostedVideo } from './styles'
 
 const Post = ({data: {
     ups, 
@@ -9,6 +9,7 @@ const Post = ({data: {
     author, 
     url, 
     post_hint,
+    media,
     preview, 
     title, 
     num_comments
@@ -23,7 +24,9 @@ const Post = ({data: {
         {console.log(post_hint)}
 
         {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
-        <UrlLink post_hint={post_hint} url={url} />
+        {post_hint === "hosted:video" ? (<HostedVideo media={media} />) : null}
+        <UrlLink post_hint={post_hint} url={url} preview={preview} />
+        {post_hint === "link" && preview.reddit_video_preview !== undefined ? (<Video preview={preview} />) : null}
         <Image post_hint={post_hint} url={url} />
         
         <Wrapper footer>
