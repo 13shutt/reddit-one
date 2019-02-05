@@ -17,6 +17,7 @@ const StyledDiv = styled.section`
   justify-content: center;
   align-items: center;
   min-height: 89vh;
+  margin-top: 40px;
 `
 
 class Posts extends Component {
