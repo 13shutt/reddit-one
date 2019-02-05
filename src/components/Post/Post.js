@@ -12,16 +12,17 @@ const Post = ({data: {
     media,
     preview, 
     title, 
-    num_comments
+    num_comments,
+    permalink
   }}) => (
   <Wrapper container>
     <Wrapper posts>
       <Ups>{numeral(ups).format('0a')}</Ups>
       <Wrapper content>
         <PostHeader subreddit={subreddit_name_prefixed} author={author} />
-        <PostTitle title={title} />
+        <PostTitle title={title} permalink={permalink} />
 
-        {console.log(post_hint)}
+        {console.log(post_hint, permalink)}
 
         {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
         {post_hint === "hosted:video" ? (<HostedVideo media={media} />) : null}
