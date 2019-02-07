@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from 'react-router-dom'
 
 import { fetchPosts, fetchOriginalPosts } from '../../store/Posts/actions'
 
@@ -18,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routers)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Routers))
