@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/reddit-one/precache-manifest.ef937bdb41b9acaa66c7b6419ef3794e.js"
+  "https://13shutt.github.io/reddit-one/precache-manifest.8146927c18b734a030885f5b600175a3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/reddit-one/index.html", {
+workbox.routing.registerNavigationRoute("https://13shutt.github.io/reddit-one/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
