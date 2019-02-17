@@ -19,13 +19,12 @@ const StyledDiv = styled.section`
   min-height: 89vh;
   margin-top: 40px;
 `
+
 class Posts extends Component {
   constructor(props) {
     super(props)
 
     this.props.history.listen((location) => {
-      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-      console.log('pizdytina')
       this.fetchReddit(this.props.match.url)
     })
   }
@@ -50,7 +49,6 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props, "componentDidMount")
     this.fetchReddit(this.props.match.url)
   }
 
