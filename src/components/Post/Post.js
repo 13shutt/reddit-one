@@ -22,8 +22,6 @@ const Post = ({data: {
         <PostHeader subreddit={subreddit_name_prefixed} author={author} />
         <PostTitle title={title} permalink={permalink} />
 
-        {console.log(post_hint, permalink)}
-
         {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
         {post_hint === "hosted:video" ? (<HostedVideo media={media} />) : null}
         <UrlLink post_hint={post_hint} url={url} preview={preview} />

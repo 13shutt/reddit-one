@@ -5,17 +5,12 @@ import { Button } from '../Button/index'
 import { Input, Icon, User, Logo, ContentIcon, Wrapper } from './styles'
 
 
-const Header = (props) => {
+const Header = () => {
   
   const [classname, setClassname] = useState('fa-line-chart')
   const [postType, setPostType] = useState('Popular')
 
-  const iconFunction = (type, icon, amount) => {
-    if (type === "Original") {
-      props.fetchOriginalPosts(amount)
-    } else {
-      props.fetchPosts(type, amount)
-    }
+  const iconFunction = (type, icon) => {
     setClassname(icon)
     setPostType(type)
   }
@@ -25,7 +20,7 @@ const Header = (props) => {
       <Wrapper header>
 
         <Link to="/">
-          <Logo link="http://localhost:3000/" click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
+          <Logo link="http://localhost:3000/" click={() => iconFunction('Popular', 'fa-line-chart')}/>
         </Link>
 
         <ContentIcon classname={classname} postType={postType}/>
@@ -33,9 +28,9 @@ const Header = (props) => {
         <Input placeholder="Search Reddit"/>
 
         <Wrapper icons>
-            <Icon classname="fa-line-chart" type="popular"  click={() => iconFunction('Popular', 'fa-line-chart', 10)}/>
-            <Icon classname="fa-bar-chart" type="all"  click={() => iconFunction('All', 'fa-bar-chart', 10)}/>
-            <Icon classname="fa-pie-chart" type="original"  click={() => iconFunction('Original', 'fa-pie-chart', 10)}/>
+          <Icon classname="fa-line-chart" type="popular"  click={() => iconFunction('Popular', 'fa-line-chart')}/>
+          <Icon classname="fa-bar-chart" type="all"  click={() => iconFunction('All', 'fa-bar-chart')}/>
+          <Icon classname="fa-pie-chart" type="original"  click={() => iconFunction('Original', 'fa-pie-chart')}/>
         </Wrapper>
 
         <Wrapper btns>

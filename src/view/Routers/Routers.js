@@ -9,10 +9,6 @@ import PostPage from '../PostPage'
 
 export default class AppContainer extends Component {
 
-  componentDidMount() {
-    this.props.actions.fetchPosts('popular', 10)
-  }
-
   render() { 
     return (
       <section>
@@ -22,15 +18,11 @@ export default class AppContainer extends Component {
           <link rel="icon" href={redditIcon} type="image/png" sizes="16x16" />
         </Helmet>
 
-        <Header 
-          fetchPosts={this.props.actions.fetchPosts} 
-          fetchOriginalPosts={this.props.actions.fetchOriginalPosts} 
-        />
+        <Header />
 
         <Switch>
           <Route exact path="/" component={Posts} />
           <Route exact path="/r/:type" component={Posts} />
-          {/*  post need to be rendered over parent component */}
           <Route path="/:permalink" component={PostPage} />
         </Switch>
       </section>

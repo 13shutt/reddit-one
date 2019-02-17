@@ -19,9 +19,43 @@ const StyledDiv = styled.section`
   min-height: 89vh;
   margin-top: 40px;
 `
-
 class Posts extends Component {
-  render() { 
+  constructor(props) {
+    super(props)
+
+    this.props.history.listen((location) => {
+      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+      console.log('pizdytina')
+      this.fetchReddit(this.props.match.url)
+    })
+  }
+
+  fetchReddit(url) {
+    switch (url) {
+      case '/':
+      this.props.actions.fetchPosts('popular', 10)
+        break;
+      case '/r/popular':
+      this.props.actions.fetchPosts('popular', 10)
+        break;
+      case '/r/all':
+      this.props.actions.fetchPosts('all', 10)
+        break;
+      case '/r/original':
+      this.props.actions.fetchOriginalPosts('original', 10)
+        break;
+      default:
+      this.props.actions.fetchPosts('popular', 10)
+    }
+  }
+
+  componentDidMount() {
+    console.log(this.props, "componentDidMount")
+    this.fetchReddit(this.props.match.url)
+  }
+
+  
+  render() {
     return (
       <StyledDiv>
       {this.props.loading === true 
