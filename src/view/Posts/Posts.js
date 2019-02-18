@@ -24,7 +24,7 @@ class Posts extends Component {
   constructor(props) {
     super(props)
 
-    this.props.history.listen((location) => {
+    this.props.history.listen(() => {
       this.fetchReddit(this.props.match.url)
     })
   }
@@ -50,6 +50,7 @@ class Posts extends Component {
 
   componentDidMount() {
     this.fetchReddit(this.props.match.url)
+    console.log('Posts component did mount')
   }
 
   
