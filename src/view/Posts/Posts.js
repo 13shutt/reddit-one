@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import Loader from 'react-loader-spinner'
 
-import Post from '../../components/Post'
+import Post from '../../components/Post/Post'
 
 const StyledSection = styled.section`
   margin-top: 30px;
