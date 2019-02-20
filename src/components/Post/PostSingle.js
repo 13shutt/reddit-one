@@ -1,10 +1,9 @@
 import React from 'react'
 import numeral from 'numeral'
 
-import { Ups, PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video, HostedVideo } from './styles'
+import { PostHeader, PostTitle, PostFooterIcon, Wrapper, Image, UrlLink, Video, HostedVideo } from './styles'
 
 const PostSingle = ({data: {
-    ups, 
     subreddit_name_prefixed, 
     author, 
     url, 
@@ -15,8 +14,7 @@ const PostSingle = ({data: {
     num_comments,
     permalink
   }}) => (
-  <Wrapper posts>
-    <Ups>{numeral(ups).format('0a')}</Ups>
+  <Wrapper single>
     <Wrapper content>
       <PostHeader subreddit={subreddit_name_prefixed} author={author} />
       <PostTitle title={title} permalink={permalink} />

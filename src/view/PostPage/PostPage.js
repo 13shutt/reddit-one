@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PostSingle from '../../components/Post/PostSingle'
 import Comments from '../../components/Comments'
+import PostHeader from '../../components/PostHeader'
 
 const StyledDiv = styled.section`
   display: flex;
@@ -24,20 +25,17 @@ class PostPage extends Component {
 
   render() { 
     return (
-      <StyledDiv>
-        {/* SIDEBAR: subreddit title, rules, filter, footer */}
-
-        {console.log(this.state)}
-
+      <>
         {this.state === null 
-          ? null 
-          : <>
-              <PostSingle data={this.state.post}/>
-              <Comments data={this.state.comments.children} />
-            </>
-        }
-
-      </StyledDiv>
+            ? null 
+            : <StyledDiv>
+                {console.log(this.props.history)}
+                <PostHeader ups={this.state.post.ups} title={this.state.post.title} goBack={this.props.history.goBack} />
+                <PostSingle data={this.state.post}/>
+                <Comments data={this.state.comments.children} />
+              </StyledDiv>
+        } 
+      </>
     );
   }
 }

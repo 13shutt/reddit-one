@@ -25,6 +25,15 @@ export const Wrapper = styled.div`
     `
   }
 
+  ${({ single }) => 
+    single && css`
+      display: flex;
+      flex-direction: row;
+      padding: 5px 10px;
+      padding-top: 40px;
+    `
+  }
+
   ${({ content }) => 
     content && css`
       display: flex;
