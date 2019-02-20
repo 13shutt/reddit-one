@@ -24,12 +24,14 @@ class Posts extends Component {
   constructor(props) {
     super(props)
 
-    this.props.history.listen(() => {
-      this.fetchReddit(this.props.match.url)
+    this.props.history.listen(async () => {
+      await console.log('History changed')
+      await this.fetchReddit(this.props.match.url)
     })
   }
 
   fetchReddit(url) {
+    console.log('fetch posts from posts')
     switch (url) {
       case '/':
       this.props.actions.fetchPosts('popular', 10)
@@ -41,16 +43,16 @@ class Posts extends Component {
       this.props.actions.fetchPosts('all', 10)
         break;
       case '/r/original':
-      this.props.actions.fetchOriginalPosts('original', 10)
+      this.props.actions.fetchOriginalPosts(10)
         break;
       default:
       this.props.actions.fetchPosts('popular', 10)
     }
   }
 
-  componentDidMount() {
-    this.fetchReddit(this.props.match.url)
-    console.log('Posts component did mount')
+  async componentDidMount () {
+    await this.fetchReddit(this.props.match.url)
+    await console.log('Posts component did mount')
   }
 
   

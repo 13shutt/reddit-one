@@ -38,6 +38,17 @@ const Comment = styled.div`
     .fa-caret-down:hover {
       color: blue;
     }
+    div {
+      display: block;
+      height: 100%;
+      width: 50%;
+      border-right: 2px solid rgb(237, 239, 241);
+      transition: border-right 0.07s ease-out;
+      margin-right: 12px;
+      :hover {
+        border-right: 2px solid rgb(68, 78, 89);
+      }
+    }
   }
 
   div {
@@ -68,6 +79,7 @@ const Comments = ({ data }) => (
         <section>
           <i className="fa fa-caret-up" aria-hidden="true"></i>
           <i className="fa fa-caret-down" aria-hidden="true"></i>
+          <div></div>
         </section>
         <div>
           <section>

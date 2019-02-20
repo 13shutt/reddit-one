@@ -9,21 +9,22 @@ const StyledHeader = styled.div`
   color: gray;
   justify-content: space-between;
   padding: 15px 20px;
-
+  align-items: baseline;
+  
   section {
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     
     div {
       display: flex;
       flex-direction: row;
       align-items: center;
-      min-width: 45px;
       margin-right: 10px;
       i {
         font-size: 22px;
         color: #6e6e6e;
-        padding: 3px 6px;
+        padding: 0px 6px;
       }
       p {
         font-size: 18px;

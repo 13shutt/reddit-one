@@ -9,6 +9,8 @@ const StyledDiv = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 100px 15vw 0 15vw;
+  border-left: 1px solid rgba(0,0,0,0.4);
+  border-right: 1px solid rgba(0,0,0,0.4);
 `
 
 class PostPage extends Component {
