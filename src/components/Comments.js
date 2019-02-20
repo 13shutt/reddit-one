@@ -5,20 +5,17 @@ import { PostFooterIcon } from './Post/styles'
 const StyledBody =  styled.div`
   display: flex;
   flex-direction: column;
+  background: white;
 `
 
 const Comment = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 15px;
-  border: 1px solid rgba(0,0,0,0.2);
   border-radius: 5px;
   cursor: pointer;
   transition: border 0.07s ease-out;
   margin: 10px;
-  :hover {
-    border: 1px solid rgba(0,0,0,0.4);
-  }
 
   section {
     display: flex;
@@ -42,11 +39,19 @@ const Comment = styled.div`
       display: block;
       height: 100%;
       width: 50%;
-      border-right: 2px solid rgb(237, 239, 241);
-      transition: border-right 0.07s ease-out;
-      margin-right: 12px;
+      padding: 0 5px;
       :hover {
-        border-right: 2px solid rgb(68, 78, 89);
+        span {
+          border-right: 2px solid rgb(68, 78, 89);
+        }
+      }
+      span {
+        margin-right: 12px;
+        display: block;
+        height: 100%;
+        width: 50%;
+        border-right: 2px solid #bfb9b9;
+        transition: border-right 0.07s ease-out;
       }
     }
   }
@@ -79,7 +84,7 @@ const Comments = ({ data }) => (
         <section>
           <i className="fa fa-caret-up" aria-hidden="true"></i>
           <i className="fa fa-caret-down" aria-hidden="true"></i>
-          <div></div>
+          <div><span></span></div>
         </section>
         <div>
           <section>

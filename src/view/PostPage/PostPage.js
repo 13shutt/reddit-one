@@ -8,9 +8,15 @@ const StyledDiv = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 100px 15vw 0 15vw;
+  margin: 0 15vw 0 15vw;
+  padding: 70px 15px;
   border-left: 1px solid rgba(0,0,0,0.4);
   border-right: 1px solid rgba(0,0,0,0.4);
+  background: #eeeeee;
+`
+
+const StyledBody = styled.body`
+  background: #2e2f30;
 `
 
 class PostPage extends Component {
@@ -30,12 +36,14 @@ class PostPage extends Component {
       <>
         {this.state === null 
             ? null 
-            : <StyledDiv>
-                {console.log(this.props.history)}
-                <PostHeader ups={this.state.post.ups} title={this.state.post.title} goBack={this.props.history.goBack} />
-                <PostSingle data={this.state.post}/>
-                <Comments data={this.state.comments.children} />
-              </StyledDiv>
+            : <StyledBody>
+                <StyledDiv>
+                  {console.log(this.props.history)}
+                  <PostHeader ups={this.state.post.ups} title={this.state.post.title} goBack={this.props.history.goBack} />
+                  <PostSingle data={this.state.post}/>
+                  <Comments data={this.state.comments.children} />
+                </StyledDiv>
+              </StyledBody>
         } 
       </>
     );

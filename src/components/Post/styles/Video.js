@@ -10,13 +10,13 @@ const StyledDiv = styled.div`
   }
 `
 
-export const Video = ({ preview }) => (
+export const Video = ({ url, is_video }) => (
   <StyledDiv>
     <ReactPlayer 
-      url={preview.reddit_video_preview.fallback_url} 
-      controls={preview.reddit_video_preview.is_gif === true ? false : true}
-      playing={preview.reddit_video_preview.is_gif === true ? true : false}
-      loop={preview.reddit_video_preview.is_gif === true ? true : false}
+      url={url} 
+      controls={!is_video}
+      playing={is_video}
+      loop={!is_video}
     />
   </StyledDiv>
 )

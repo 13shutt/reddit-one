@@ -18,6 +18,7 @@ const StyledDiv = styled.section`
   align-items: center;
   min-height: 89vh;
   margin-top: 40px;
+  background: #dae0e6;
 `
 
 class Posts extends Component {

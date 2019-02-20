@@ -13,7 +13,8 @@ const Post = ({data: {
     preview, 
     title, 
     num_comments,
-    permalink
+    permalink,
+    is_video
   }}) => (
   <Wrapper container>
     <Wrapper posts>
@@ -22,7 +23,7 @@ const Post = ({data: {
         <PostHeader subreddit={subreddit_name_prefixed} author={author} />
         <PostTitle title={title} permalink={permalink} />
 
-        {post_hint === "rich:video" ? (<Video preview={preview} />) : null}
+        {post_hint === "rich:video" ? (<Video url={url} is_video={is_video} />) : null}
         {post_hint === "hosted:video" ? (<HostedVideo media={media} />) : null}
         <UrlLink post_hint={post_hint} url={url} preview={preview} />
         {post_hint === "link" && preview.reddit_video_preview !== undefined ? (<Video preview={preview} />) : null}

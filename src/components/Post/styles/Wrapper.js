@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
       border-radius: 5px;
       cursor: pointer;
       transition: border 0.07s ease-out;
+      background: white;
       :hover {
         border: 1px solid rgba(0,0,0,0.4);
       }
@@ -31,6 +32,7 @@ export const Wrapper = styled.div`
       flex-direction: row;
       padding: 5px 10px;
       padding-top: 40px;
+      background: white;
     `
   }
 
