@@ -16,7 +16,7 @@ class Posts extends Component {
   }
 
   fetchReddit(url) {
-    console.log('fetch posts from posts', this.props.match.url)
+    console.log('fetch posts from posts', this.props)
     const fetchPosts = {
       '/': () => this.props.actions.fetchPosts('popular', 10),
       '/r/popular': () => this.props.actions.fetchPosts('popular', 10),
