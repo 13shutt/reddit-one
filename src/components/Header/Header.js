@@ -5,7 +5,7 @@ import { Button } from '../Button/index'
 import { Input, Icon, User, Logo, ContentIcon, Wrapper } from './styles'
 
 
-const Header = () => {
+const Header = (props) => {
   
   const [classname, setClassname] = useState('fa-line-chart')
   const [postType, setPostType] = useState('Popular')
@@ -14,13 +14,36 @@ const Header = () => {
     setClassname(icon)
     setPostType(type)
   }
+
+  const myURL = {
+    dev: 'http://localhost:3000/',
+    prod: 'https://13shutt.github.io/reddit-one/'
+  }
+
+  const getToken = async (myURL) => {
+    console.log(props.location.search)
+    const stateStart = props.location.search.indexOf('state=')
+    const stateFinish = props.location.search.indexOf('&')
+    const state = props.location.search.slice(stateStart + 6, stateFinish)
+    const codeStart = props.location.search.indexOf('code=')
+    const code = props.location.search.slice(codeStart + 5, props.location.search.length)
+    console.log(state, code)
+    await fetch('https://www.reddit.com/api/v1/access_token', {
+      method: 'POST',
+      headers: {
+        'Authorization': `grant_type=authorization_code&code=${code}&redirect_uri=${myURL.dev}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }
   
   return (
     <header>
       <Wrapper header>
 
         <Link to="/">
-          <Logo link="http://localhost:3000/" click={() => iconFunction('Popular', 'fa-line-chart')}/>
+          <Logo link={myURL.dev} click={() => iconFunction('Popular', 'fa-line-chart')}/>
         </Link>
 
         <ContentIcon classname={classname} postType={postType}/>
@@ -34,8 +57,10 @@ const Header = () => {
         </Wrapper>
 
         <Wrapper btns>
-          <Button primary>LOG IN</Button>
-          <Button>SING UP</Button>
+          <Button primary>
+            <a href={`https://www.reddit.com/api/v1/authorize?client_id=uDmsZCsIwBBrjg&response_type=code&state=lupazapypyapypaza&redirect_uri=${myURL.dev}&duration=temporary&scope=identity`}>LOG IN</a>
+          </Button>
+          <Button onClick={getToken}>SING UP</Button>
         </Wrapper>
 
         <User />
