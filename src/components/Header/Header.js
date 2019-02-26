@@ -16,7 +16,7 @@ const Header = (props) => {
   }
 
   const myURL = {
-    dev: 'http://r.fenko.ga',
+    dev: 'http://localhost:3000/',
     prod: 'https://13shutt.github.io/reddit-one/'
   }
 
@@ -31,15 +31,16 @@ const Header = (props) => {
     await fetch('https://www.reddit.com/api/v1/access_token', {
       method: 'POST',
       headers: {
-        // 'Authorization': "Basic 8qWPr5D31K_-Kg:OFMmXC4z45jDZqs_Wb1qbwZcGP4",
-        "Authorization": "Basic OHFXUHI1RDMxS18tS2c6T0ZNbVhDNHo0NWpEWnFzX1diMXFid1pjR1A0",
+        // 'Authorization': "Basic uDmsZCsIwBBrjg:sHU_vLHfDq66mSfBA7qUPV8WVVQ",
+        "Authorization": "Basic dURtc1pDc0l3QkJyamc6c0hVX3ZMSGZEcTY2bVNmQkE3cVVQVjhXVlZR",
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      body: `grant_type=authorization_code&code=${code}&redirect_uri=http://r.fenko.ga`
+      body: `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/`
 
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         console.log("TOKEN: " + data.access_token)
 
         fetch('https://oauth.reddit.com/api/v1/me', {
@@ -47,8 +48,7 @@ const Header = (props) => {
           headers: {
             "Authorization": `Bearer ${data.access_token}`,
           },
-        })
-          .then(res => res.json())
+        }).then(res => res.json())
           .then(data => console.log(data))
       })
   }
@@ -75,7 +75,7 @@ const Header = (props) => {
 
         <Wrapper btns>
           <Button primary>
-            <a href={`https://www.reddit.com/api/v1/authorize?client_id=8qWPr5D31K_-Kg&response_type=code&state=lupazapypyapypaza&redirect_uri=${myURL.dev}&duration=temporary&scope=identity`}>LOG IN</a>
+            <a href={`https://www.reddit.com/api/v1/authorize?client_id=uDmsZCsIwBBrjg&response_type=code&state=lupazapypyapypaza&redirect_uri=${myURL.dev}&duration=temporary&scope=identity`}>LOG IN</a>
           </Button>
           <Button onClick={getToken}>SING UP</Button>
         </Wrapper>
