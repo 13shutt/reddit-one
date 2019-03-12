@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Button } from '../Button/index'
 import { Input, Icon, User, Logo, ContentIcon, Wrapper } from './styles'
+// import { myURL, getToken } from "api/auth";
 
 
 const Header = (props) => {
@@ -20,7 +21,7 @@ const Header = (props) => {
     prod: 'https://13shutt.github.io/reddit-one/'
   }
 
-  const getToken = async (myURL) => {
+  const getToken = async () => {
     console.log(props.location.search)
     const stateStart = props.location.search.indexOf('state=')
     const stateFinish = props.location.search.indexOf('&')
