@@ -1,18 +1,23 @@
 const checkStatus = response => {
-  if (response.ok) {
+  if (response.status >= 200 && response.status < 300) {
     return response;
   } else {
-    const error = new Error(response.statusText);
+    const error = new Error(response.status);
     error.response = response
     throw error
   }
 } 
   
-const parseJSON = res => res.json()
+const parseJSON = response => {
+  if (response.status === 204 || response.status === 205) {
+    return null;
+  }
+  return response.json()
+}
   
 const Fetcher = {
-  get: (path, params) =>
-    fetch(path, params)
+  get: async (path, options) =>
+    fetch(path, options)
     .then(checkStatus)
     .then(parseJSON)
 }

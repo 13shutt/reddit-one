@@ -7,29 +7,26 @@ import { StyledDiv, StyledSection } from 'components/PostList/Wrappers'
 class PostList extends Component {
   constructor(props) {
     super(props)
-
+    
     this.props.history.listen(async () => {
       await console.log('history changed')
       // тут трабл, без верхнього рядку втикається на один пункт в історії
       await this.fetchReddit(this.props.match.url)
     })
   }
-
+    
   fetchReddit(url) {
-    console.log('fetch posts from posts', this.props)
     const fetchPosts = {
       '/': () => this.props.actions.fetchPosts('popular', 10),
       '/r/popular': () => this.props.actions.fetchPosts('popular', 10),
       '/r/all': () => this.props.actions.fetchPosts('all', 10),
       '/r/original': () => this.props.actions.fetchOriginalPosts(10)
     }
-
     return fetchPosts[url] ? fetchPosts[url]() : this.props.actions.fetchPosts('popular', 10)
   }
 
-  async componentDidMount () {
-    await this.fetchReddit(this.props.match.url)
-    await console.log('Posts component did mount')
+  componentDidMount () {
+    this.fetchReddit(this.props.match.url)
   }
 
   
